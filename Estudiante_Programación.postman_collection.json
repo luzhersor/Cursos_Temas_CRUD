@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "3de6c451-36f6-4f4d-806f-3fbc03004509",
+		"name": "Estudiante_Programación",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24134758"
+	},
+	"item": [
+		{
+			"name": "localhost:3500/cursos/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_curso\":1,\r\n    \"nombre\":\"Maestria con java\",\r\n    \"modalidad\":\"presencial\",\r\n    \"fecha_inicialización\":\"01/01/2023\"\r\n\r\n}\r\n\r\n/*Si no asigno el id, JPA H2 lo asigna automaticamente por el SEQUENCE.*/\r\n/*Se deben asignar restricciones para limitar las mayusculas o minisculas*/\r\n\r\n/*\r\n{\r\n\r\n    \"nombre\":\"Geoquímica de la tierra\",\r\n    \"modalidad\":\"online\",\r\n    \"fecha_inicialización\":\"01/01/2023\"\r\n}\r\n\r\n*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/cursos/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"cursos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/cursos/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3500/cursos/traer",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"cursos",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/temas/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"nombre\":\"geoquimica java\",\r\n    \"descripcion\":\"geoquimica asistida por java\",\r\n    \"curso\" : {\"id_curso\":1}\r\n}\r\n\r\n//El curso se puede asignar al tema desde la creación del mismo\r\n//o posteriormente en la edición. UNICAMENTE DESDE EL TEMA, NO ALREVÉS.",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/temas/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"temas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/cursoseditar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\"id_curso\":1,\r\n  \"nombre\":\"geoquímica\",\r\n  \"modalidad\":\"presencial\",\r\n  \"fecha_inicialización\":\"01/01/2023\",\r\n  \"listaTemas\":[\r\n      {\"id_tema\":2}\r\n  ]}\r\n\r\n  /*No se puede agregar el tema desde la edición del Curso\r\n  unicamente se puede desde el tema hacia el Curso debido\r\n  a la ubicación de las anotations*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/cursos/editar",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"cursos",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/temas/editar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_tema\" : 3,\r\n    \"nombre\" : \"Isotopos de Java\",\r\n    \"descripcion\" : \"Qué son y para qué se utilizan\",\r\n    \"curso\" : {\"id_curso\":1}\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/temas/editar",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"temas",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/cursos/java",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3500/cursos/java",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"cursos",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/cursos/temas/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3500/cursos/temas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"cursos",
+						"temas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
