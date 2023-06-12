@@ -1,7 +1,8 @@
 # Cursos_Temas_CRUD
 API de Cursos y temas con SpringBoot que conecta a una base de datos H2. 
 La API permite realizar algunas consultas CRUD(Cread, Read, Update, Delete) de las clases "Curso" y "Tema", así como otras operaciónes personalizadas.
-Un curso puede contener varios temas (relación 1 a muchos @OneToMany)
+ ### Consideraciones importantes 
+ * Cada curso puede contener varios temas (relación 1 a muchos @OneToMany)
 
  ### 🖥️ Tecnologías Utilizadas:
 * Java 17
